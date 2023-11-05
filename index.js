@@ -1,45 +1,38 @@
 let rs = require("readline-sync");
 
-let operationPerform = rs.question(
-  "What operation would you like to perform? "
-);
+let firstNumber = 0;
+let secondNumber = 0;
+const operators = ["/", "*", "-", "+"];
 
-let userEnterOptions = rs.question("Enter your operation: ");
-
-let symbols = rs.question[("+", "-", "*", "/")];
-
-let invalidCharacter = rs.question("That is not a valid character ");
-
-let restart = rs.question("Restart the program. ");
-
-
-
-
-
-
-function invalidOperation() {
-
-  if (symbols === "/") {
-    console.log(invalidCharacter + "That is not a valid operation ");
-          console.log("Try again ")
-  } else if (symbols === "+") { 
-    console.log(restart + "Restart the program ");
+function makeCalculation(operators, firstNumber, secondNumber) {
+  if (operators === "+") {
+    return firstNumber + secondNumber;
+  } else if (operators === "-") {
+    return firstNumber - secondNumber;
+  } else if (operators === "*") {
+    return firstNumber * secondNumber;
+  } else {
+    return firstNumber / secondNumber;
   }
 }
 
+let userQuestion = rs.question("What operation would you like to perform? ");
 
+mathOperator = rs.question(
+  "Please select one of the following operators:  / , * , - , or + :) "
+);
+while (!operators.includes(mathOperator)) {}
+console.log("That is not a valid operation, please restart program. ");
 
-let numbers = [];
-let newProgram = rs.question("Please enter the first number "); 
-
-function validOperation() {
-
-     if(numbers === 0) {
-          console.log(newProgram + "Please enter the first number ")
-
-} else if (numbers.length === a) {
-     console.log(invalidCharacter + "This is not a number")
+firstNumber = rs.questionInt("Please enter the first number: ");
+limitMessage: "This is not a number, please restart program. ";
+{
 }
 
+secondNumber = rs.questionInt("Please enter the second number: ");
+limitMessage: "This is not a number, please restart program. ";
+{
 }
+console.log("You have entered a valid answer!");
 
+console.log(makeCalculation(mathOperator, firstNumber, secondNumber));
