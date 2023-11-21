@@ -1,6 +1,6 @@
 let rs = require("readline-sync");
 
-const operators = ["/", "*", "-", "+"];
+
 
 function makeCalculation(operators, firstNumber, secondNumber) {
   if (operators === "+") {
@@ -25,7 +25,7 @@ const userQuestion = (arrQuestion) => {
   return question;
 };
 
-userQuestion(arrQuestion);
+const operator = userQuestion(arrQuestion);
 
 const firstNumber = rs.questionInt("Please enter the first number: ", {
   limitMessage: "This is not a number, please restart program. ",
@@ -37,4 +37,8 @@ const secondNumber = rs.questionInt("Please enter the second number: ", {
 
 console.log("You have entered a valid answer!");
 
-console.log(makeCalculation(userQuestion, firstNumber, secondNumber));
+console.log(firstNumber, userQuestion, secondNumber);
+
+console.log('The result is ', makeCalculation(operator, firstNumber, secondNumber));
+
+
